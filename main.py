@@ -162,14 +162,14 @@ def atom_stream_ion(lines):
 if __name__ == '__main__':
     atoms = []
 
-    neutral_source = "Thorkildsen, G. (2023). Acta Cryst. A79, 318-330; Olukayode, S., Froese Fischer, C. & Volkov, A. (2023). Acta Cryst. A79, 59–79."
+    neutral_source = "Thorkildsen, G. (2023). Acta Cryst. A79, 318-330; Olukayode, S., Froese Fischer, C. & Volkov, A. (2023). Acta Cryst. A79, 59-79."
     with open("neutral_atoms.txt") as f:
         atoms.extend([Atom(d) for d in atom_stream_neutral(f)])
     for atom in atoms:
         atom.source=neutral_source
         atom.upper_limit = 6
 
-    ion_source = "Thorkildsen, G. (2024). Acta Cryst. A80, 129-136; Olukayode, S., Froese Fischer, C. & Volkov, A. (2023). Acta Cryst. A79, 229–245."
+    ion_source = "Thorkildsen, G. (2024). Acta Cryst. A80, 129-136; Olukayode, S., Froese Fischer, C. & Volkov, A. (2023). Acta Cryst. A79, 229-245."
     with open("ions_1.txt") as f:
         atoms.extend([Atom(d) for d in atom_stream_ion(f)])
     for atom in atoms:
