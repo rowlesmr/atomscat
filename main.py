@@ -46,7 +46,7 @@ class Atom:
         return f"{self.symbol}|{self.atomic_number}|{self.electrons}|{self.charge}|{self.element}|{self.c_s}|{len(self.a_s)}:{self.a_s}|{len(self.b_s)}:{self.b_s}|{self.source}"
 
     def cif_line(self) -> str:
-        return f"{self.symbol:<4}  {self.c_s}  [ {'  '.join(self.a_s)} ]  [ {'  '.join(self.b_s)} ]  {self.lower_limit}  {self.upper_limit}  '{self.source}'"
+        return f"{self.symbol:<5}  {self.c_s}  [ {'  '.join(self.a_s)} ]  [ {'  '.join(self.b_s)} ]  {self.lower_limit}  {self.upper_limit}  '{self.source}'"
 
 
 def atom_stream_neutral(lines):
