@@ -1,4 +1,4 @@
-Creates a CIF file detailing the Inverse Mott-Bethe coefficient for the atomic scattering factors of all elements, most cations, and a couple of anions.
+Creates a CIF file detailing the Inverse Mott-Bethe coefficients for the atomic scattering factors of all elements, most cations, and a couple of anions.
 
 The coefficients can be used to calculate the atomic scattering factor for a given element/ion by
 
