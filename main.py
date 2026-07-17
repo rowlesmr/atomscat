@@ -163,6 +163,7 @@ def atom_stream_ion(lines):
 
 if __name__ == '__main__':
     atoms = []
+    import sys
 
     neutral_source = "Thorkildsen, G. (2023). Acta Cryst. A79, 318-330; Olukayode, S., Froese Fischer, C. & Volkov, A. (2023). Acta Cryst. A79, 59-79."
     with open("neutral_atoms.txt") as f:
@@ -183,6 +184,21 @@ if __name__ == '__main__':
 
     sorted_atoms = sorted(atoms, key=lambda x: (x.atomic_number, x.electrons))
 
+    for atom in sorted_atoms:
+        print(atom)
+
+
+    stols = [0,0.01,0.02,0.03,0.04,0.05,0.06,0.07,0.08,0.09,0.1,0.11,0.12,0.13,0.14,0.15,0.16,0.17,0.18,0.19,0.2,0.22,0.24,0.25,0.26,0.28,0.3,0.32,0.34,0.35,0.36,0.38,0.4,0.42,0.44,0.45,0.46,0.48,0.5,0.55,0.6,0.65,0.7,0.8,0.9,1.0,1.1,1.2,1.3,1.4,1.5]
+
+    helium = sorted_atoms[0]
+
+    for stol in stols:
+        print(f"{stol}\t {helium.f_s(stol)}")
+
+
+
+    sys.exit()
+
     with open("atomscat.cif", "w", encoding="utf-8") as file:
         file.write("""#\\#CIF_2.0
 
@@ -198,8 +214,6 @@ _atom_atype_scat.source\n""")
         for atom in sorted_atoms:
              file.write(f"{atom.cif_line()}\n")
 
-    # oxygen = sorted_atoms[23]
-    # print(oxygen.f_s(0.01))
 
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
